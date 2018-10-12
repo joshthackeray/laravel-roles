@@ -1,0 +1,21 @@
+{
+    "name": "joshthackeray/laravel-roles",
+    "description": "A simple and easy way to attach role levels to users in the Laravel Framework",
+    "require": {
+        "laravel/framework": "^5.7"
+    },
+    "authors": [
+        {
+            "name": "Josh Thackeray",
+            "email": "me@joshthackeray.co.uk"
+        }
+    ],
+    "minimum-stability": "dev",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "JoshThackeray\\Roles\\RolesServiceProvider"
+            ]
+        }
+    }
+}
