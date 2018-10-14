@@ -29,10 +29,42 @@ class RolesServiceProvider extends ServiceProvider
 
         //Assigning the commands to the Kernel
         if ($this->app->runningInConsole()) {
-            $this->commands([
-                SyncRoles::class,
-            ]);
+            self::registerCommands();
         }
+
+        self::registerAssignedDirective();
+
+    }
+
+    /**
+     * Register services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
+    }
+
+    /**
+     * Register package commands
+     *
+     * @return void
+     */
+    private function registerCommands()
+    {
+        $this->commands([
+            SyncRoles::class,
+        ]);
+    }
+
+    /**
+     * Register Assigned (IF) Directive
+     *
+     * @return void
+     */
+    private function registerAssignedDirective()
+    {
 
         //Adding an if directive to blade to check for whether a user has been assigned a role
         Blade::if('assigned', function ($role, $guard = null) {
@@ -62,16 +94,5 @@ class RolesServiceProvider extends ServiceProvider
             //Else return false;
             return false;
         });
-
-    }
-
-    /**
-     * Register services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //
     }
 }
