@@ -14,5 +14,10 @@
                 "JoshThackeray\\Roles\\RolesServiceProvider"
             ]
         }
+    },
+    "autoload": {
+        "psr-4": {
+            "JoshThackeray\\Roles\\": "src/"
+        }
     }
 }
